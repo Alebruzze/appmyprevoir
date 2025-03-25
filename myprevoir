@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento da App</title>
+    <script>
+        function redirecionar() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.orbcom.prevoir.prevoir"; // Link da Play Store
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/pt/app/mypr%C3%A9voir/id670202639"; // Link da App Store
+            } else {
+                window.location.href = "https://www.prevoir.pt/my-prevoir"; // Link genérico (caso não seja mobile)
+            }
+        }
+    </script>
+</head>
+<body onload="redirecionar()">
+    <h1>Redirecionando...</h1>
+</body>
+</html>
